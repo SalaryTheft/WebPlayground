@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".menu-list > a").forEach((a_tag) => {
         a_tag.addEventListener("click", (e) => {
+            if (e.target.closest("a").classList.contains("active")) return;
             document.querySelector(".menu-list > a.active").classList.add("tmp");
             setTimeout(() => {
                 document.querySelector(".menu-list > a.active.tmp").classList.remove("active", "tmp");
